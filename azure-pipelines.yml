@@ -6,7 +6,8 @@
 trigger:
 - main
 
-pool: MyPool
+pool:
+  vmImage: ubuntu-latest
 
 steps:
 - task: ArchiveFiles@2
@@ -15,5 +16,8 @@ steps:
     includeRootFolder: false
 
 - task: PublishPipelineArtifact@1
+  inputs:
+    artifactName: 'MyPipelineArtifact'
+    publishLocation: 'pipeline'
 
 
