@@ -19,5 +19,8 @@ steps:
   inputs:
     artifactName: 'MyPipelineArtifact'
     publishLocation: 'pipeline'
-
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/TEST-*.xml'
 
